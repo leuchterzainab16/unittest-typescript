@@ -13,5 +13,19 @@ export function mean(numbers: number[]): number {
 }
 
 export function median(numbers: number[]): number {
-  return 0.0;
+  if (numbers.length === 0) {
+    throw new Error("Cannot calculate median of empty array");
+  }
+
+  // Sort the array in ascending order
+  const sorted = [...numbers].sort((a, b) => a - b);
+  const mid = Math.floor(sorted.length / 2);
+
+  if (sorted.length % 2 === 0) {
+    // Even number of elements
+    return (sorted[mid - 1] + sorted[mid]) / 2;
+  } else {
+    // Odd number of elements
+    return sorted[mid];
+  }
 }
