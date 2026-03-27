@@ -65,15 +65,11 @@ test("divide nine by three is three", () => {
   expect(actual).toBe(expected);
 });
 
-test("divide nine by zero is infinity", () => {
+test("divide nine by zero throws error", () => {
   // Arrange
   const a: number = 9;
   const b: number = 0;
-  const expected: number = Infinity;
 
-  // Act
-  const actual: number = division(a, b) ;
-
-  // Assert
-  expect(actual).toBe(expected);
+  // Act & Assert
+  expect(() => division(a, b)).toThrow("Division by zero is not allowed");
 });
