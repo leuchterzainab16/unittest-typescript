@@ -52,11 +52,24 @@ test("multiply two with four is eight", () => {
   expect(actual).toBe(expected);
 });
 
-test("divide 9 by three is three", () => {
+test("divide nine by three is three", () => {
   // Arrange
   const a: number = 9;
   const b: number = 3;
   const expected: number = 3;
+
+  // Act
+  const actual: number = division(a, b) ;
+
+  // Assert
+  expect(actual).toBe(expected);
+});
+
+test("divide nine by zero is infinity", () => {
+  // Arrange
+  const a: number = 9;
+  const b: number = 0;
+  const expected: number = Infinity;
 
   // Act
   const actual: number = division(a, b) ;
